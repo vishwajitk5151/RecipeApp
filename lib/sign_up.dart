@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class SignUpPage extends StatefulWidget {
-  const SignUpPage({super.key});
+  final VoidCallback? onSignUp;
 
+  const SignUpPage({Key? key, this.onSignUp}) : super(key: key);
   @override
   State<SignUpPage> createState() => _SignUpPageState();
 }
@@ -64,52 +65,65 @@ class _SignUpPageState extends State<SignUpPage> {
                 style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 7),
-              const Text("Let's help you set up your account, it won't take long.",
+              const Text(
+                  "Let's help you set up your account, it won't take long.",
                   style: TextStyle(fontSize: 15, fontWeight: FontWeight.w400)),
               const SizedBox(height: 20),
-              const Text("Name", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500)),
+              const Text("Name",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500)),
               const SizedBox(height: 5),
               TextField(
                 controller: nameController,
                 decoration: InputDecoration(
                   hintText: "Enter Name",
-                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
-                  contentPadding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15)),
+                  contentPadding:
+                      const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                 ),
               ),
               const SizedBox(height: 15),
-              const Text("Email", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500)),
+              const Text("Email",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500)),
               const SizedBox(height: 5),
               TextField(
                 controller: emailController,
                 decoration: InputDecoration(
                   hintText: "Enter Email",
-                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
-                  contentPadding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15)),
+                  contentPadding:
+                      const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                 ),
               ),
               const SizedBox(height: 15),
-              const Text("Password", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500)),
+              const Text("Password",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500)),
               const SizedBox(height: 5),
               TextField(
                 controller: passwordController,
                 obscureText: true,
                 decoration: InputDecoration(
                   hintText: "Enter Password",
-                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
-                  contentPadding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15)),
+                  contentPadding:
+                      const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                 ),
               ),
               const SizedBox(height: 15),
-              const Text("Confirm Password", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500)),
+              const Text("Confirm Password",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500)),
               const SizedBox(height: 5),
               TextField(
                 controller: confirmPasswordController,
                 obscureText: true,
                 decoration: InputDecoration(
                   hintText: "Retype Password",
-                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
-                  contentPadding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15)),
+                  contentPadding:
+                      const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                 ),
               ),
               const SizedBox(height: 15),
@@ -146,7 +160,10 @@ class _SignUpPageState extends State<SignUpPage> {
                       Center(
                         child: Text(
                           "Sign Up",
-                          style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.w500),
+                          style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w500),
                         ),
                       ),
                       SizedBox(width: 20),
@@ -166,9 +183,11 @@ class _SignUpPageState extends State<SignUpPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset("assets/images/google.png", width: 30, height: 30),
+                  Image.asset("assets/images/google.png",
+                      width: 30, height: 30),
                   const SizedBox(width: 30),
-                  Image.asset("assets/images/facebook.png", width: 30, height: 30),
+                  Image.asset("assets/images/facebook.png",
+                      width: 30, height: 30),
                 ],
               ),
               const SizedBox(height: 10),
@@ -186,7 +205,10 @@ class _SignUpPageState extends State<SignUpPage> {
                     },
                     child: Text(
                       "Sign in",
-                      style: TextStyle(color: Colors.amber[900], fontSize: 15, fontWeight: FontWeight.w600),
+                      style: TextStyle(
+                          color: Colors.amber[900],
+                          fontSize: 15,
+                          fontWeight: FontWeight.w600),
                     ),
                   ),
                 ],
